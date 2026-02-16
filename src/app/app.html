@@ -1,2 +1,5 @@
 <h1>My new angular project</h1>
 <i class="fa-solid fa-user"></i>
+
+<p *ngIf="is_production; else devTemplate">Production</p>
+<ng-template #devTemplate>Develpment</ng-template>    
