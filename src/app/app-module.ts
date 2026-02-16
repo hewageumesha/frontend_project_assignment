@@ -5,10 +5,22 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { provideHttpClient } from '@angular/common/http';
+import { Header } from './header/header';
+import { ProjectList } from './project-list/project-list';
+import { StudentList } from './student-list/student-list';
+import { StudentForm } from './student-form/student-form';
+import { StudentProjects } from './student-projects/student-projects';
+import { Assignment } from './assignment/assignment';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Header,
+    ProjectList,
+    StudentList,
+    StudentForm,
+    StudentProjects,
+    Assignment
   ],
   imports: [
     FormsModule,
