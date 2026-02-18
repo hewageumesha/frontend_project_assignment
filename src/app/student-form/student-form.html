@@ -1,1 +1,43 @@
-<p>student-form works!</p>
+<div class="student-form-wrapper">
+  <div class="student-card">
+    <h3 class="title">
+      {{ id ? "Update Student" : "Create Student" }}
+    </h3>
+
+    <form (ngSubmit)="upsert()" class="student-form">
+
+      <div class="input-group">
+        <label for="name">Student Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          [(ngModel)]="student.name"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="average">Average Score</label>
+        <input
+          type="number"
+          id="average"
+          name="average"
+          placeholder="Enter average (8 – 10)"
+          [(ngModel)]="student.average"
+          required
+        />
+      </div>
+
+      <p *ngIf="isOutOfRange" class="error-text">
+        Average must be between 8 and 10!
+      </p>
+
+      <button type="submit" class="submit-btn">
+        {{ id ? "Update Student" : "Create Student" }}
+      </button>
+
+    </form>
+  </div>
+</div>

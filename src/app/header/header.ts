@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.css',
 })
 export class Header {
+  menuOpen = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
