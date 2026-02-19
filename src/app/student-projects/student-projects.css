@@ -1,0 +1,125 @@
+/* Container */
+.student-projects-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e5e7eb;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.student-projects-container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Table */
+.student-projects-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.student-projects-container th,
+.student-projects-container td {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.student-projects-container thead {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.student-projects-container th {
+  font-weight: 600;
+  color: #f8fafc;
+  text-align: left;
+}
+
+/* Hover effect for rows */
+.student-projects-container tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Delete action */
+.interactivehover {
+  text-align: center;
+  cursor: pointer;
+}
+
+.interactivehover i {
+  font-size: 16px;
+  color: #f87171;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.interactivehover:hover i {
+  transform: scale(1.3);
+}
+
+/* Add Project Form */
+.student-projects-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.student-projects-container label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.student-projects-container select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background-color: #0f172a;   /* solid dark fill */
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.student-projects-container select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+}
+
+/* Hover effect */
+.student-projects-container select:hover {
+  border-color: #3b82f6;
+}
+
+/* Custom dropdown arrow */
+.student-projects-container select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23f8fafc' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5.25 7.5l4.75 5 4.75-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/* Dropdown options */
+.student-projects-container option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}

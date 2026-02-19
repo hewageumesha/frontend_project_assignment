@@ -11,8 +11,11 @@ import { StudentService } from '../student.service';
 export class StudentList implements OnInit{
   constructor(private studentService: StudentService) {}
   students: Student[] = []
+  maxProjectsPerStudent:any
+  tempNumber:any
   ngOnInit(): void {
-    this.getAllStudents();
+    this.getAllStudents()
+    this.getMaxProjectPerStudent()
   }
 
   getAllStudents(){
@@ -26,4 +29,20 @@ export class StudentList implements OnInit{
       this.getAllStudents();
     });
   }
+
+  getMaxProjectPerStudent(){
+    this.studentService.getMaxProjectsPerStudent().subscribe(
+      data=>{
+        this.maxProjectsPerStudent=data
+      }
+    )
+  }
+  updateMaxProjectsPerStudent(){
+    this.studentService.updateMaxProjectsPerStudent(this.tempNumber).subscribe(
+      data=>{
+        this.maxProjectsPerStudent=data
+      }
+    )
+  }
+
 }

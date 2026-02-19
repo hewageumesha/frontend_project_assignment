@@ -1,1 +1,28 @@
-<p>project-list works!</p>
+<div class="project-list-container">
+  <h2>Project List</h2>
+  
+  <table class="project-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.id }}</td>
+        <td>{{ project.name }}</td>
+        <td class="interactivehover" (click)="deleteProject(project.id)">
+          <i class="fa fa-trash"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form (ngSubmit)="addProject()">
+    <label for="ProjectCreation">Add Project</label>
+    <input type="text" name="name" [(ngModel)]="project.name" class="inline-block">
+    <button type="submit">Submit</button>
+  </form>
+</div>

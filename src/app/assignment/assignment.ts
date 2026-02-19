@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../student.service';
 @Component({
   selector: 'app-assignment',
   standalone: false,
@@ -7,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrl: './assignment.css',
 })
 export class Assignment {
+  assignmentResult:Map<String,String>= new Map()
 
+  constructor(
+    private studentService:StudentService
+  ){}
+  ngOnInit(): void {
+    this.getAssignmentResult()
+  }
+
+  getAssignmentResult(){
+    this.studentService.getStudentAssignment().subscribe(
+      data=>{
+        this.assignmentResult=data
+      }
+    )
+  }
 }
